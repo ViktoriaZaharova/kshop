@@ -2008,6 +2008,7 @@ form .login-container.registration-container .input-block .inner-block.doubled .
     height: 81px;
     background: rgba(207, 207, 216, 0.85);
     margin: 0 auto 40px;
+    border: 1px solid #cfcfd8;
 }
 
 .modal-body {
