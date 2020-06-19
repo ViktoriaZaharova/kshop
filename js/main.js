@@ -41,4 +41,23 @@ $(document).ready(function () {
     });
 
 
+    $('.dropDown-menu input:checkbox').change(function(){
+        if($(this).is(":checked")) {
+            $('.radio-container').addClass("check");
+        } else {
+            $('.radio-container').removeClass("check");
+        }
+    });
+
+    $('.load-more').on('click', function (e) {
+        e.preventDefault();
+        $('.table-body .line:hidden').slice(0, 5).css('display', 'flex');
+
+        var onBlock = $('.equipment-product:hidden').length;
+        if(onBlock <= 0) {
+            $('.load-more').hide();
+        }
+    });
+
+
 });
