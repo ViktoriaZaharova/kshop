@@ -2951,6 +2951,10 @@ textarea:hover, textarea:focus {
     flex-wrap: nowrap;
 }
 
+.overall-rate {
+    margin: 0 auto 0 40px;
+}
+
 /***************************/
 
 
