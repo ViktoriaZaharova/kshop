@@ -234,7 +234,7 @@ form .login-container .input-block .inner-block .input-settings {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex: 0 0 30%;
+    margin: 0 0 0 auto;
 }
 
 form .login-container .input-block .inner-block .input-settings a {
@@ -342,7 +342,7 @@ form .login-container .submittion {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 250px;
+    margin: 20px 0 250px;
     position: relative;
     z-index: 6;
 }
@@ -3001,6 +3001,18 @@ textarea:hover, textarea:focus {
     .sum-product.th {
         margin: 0 30px 0 0;
     }
+
+    .sorting-wrapper .dropDown-menu {
+        width: 220px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .history-cash h3 {
+        font-size: 18px;
+        line-height: normal;
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 1440px) {
@@ -3337,10 +3349,7 @@ textarea:hover, textarea:focus {
 }
 
 @media screen and (max-width: 700px) {
-    form .login-container .input-block .inner-block .input-settings {
-        flex: 0 0 100%;
-        margin: 10px 0 0;
-    }
+
     form .login-container .input-block .inner-block,
     form .login-container .submittion {
         flex-wrap: wrap;
@@ -3609,9 +3618,7 @@ textarea:hover, textarea:focus {
         font-size: 12px;
     }
     form .login-container .input-block .inner-block .input-icon,
-    form .login-container .input-block .inner-block .input-settings a img {
-        padding: 0 15px;
-    }
+
     form .login-container .submittion {
         margin: 30px 0 70px;
     }

@@ -16,6 +16,7 @@ $(document).ready(function () {
     autosize(document.querySelectorAll('textarea'));
 
     $('.btn-dropDown').click(function () {
+        $('.dropDown-menu').fadeOut();
         $(this).toggleClass('click').siblings('.dropDown-menu').fadeToggle();
     });
 
@@ -43,9 +44,9 @@ $(document).ready(function () {
 
     $('.dropDown-menu input:checkbox').change(function(){
         if($(this).is(":checked")) {
-            $('.radio-container').addClass("check");
+            $(this).parents('.radio-container').addClass("check");
         } else {
-            $('.radio-container').removeClass("check");
+            $(this).parents('.radio-container').removeClass("check");
         }
     });
 
@@ -60,4 +61,24 @@ $(document).ready(function () {
     });
 
 
+});
+
+$('body').on('click', '.eye', function(e){
+    e.preventDefault();
+    if ($('#password').attr('type') === 'password'){
+        // $(this).addClass('view');
+        $('#password').attr('type', 'text');
+    } else {
+        // $(this).removeClass('view');
+        $('#password').attr('type', 'password');
+    }
+    return false;
+});
+
+$(document).mouseup(function (e){ // событие клика по веб-документу
+    var div = $(".dropDown-menu"); // тут указываем ID элемента
+    if (!div.is(e.target) // если клик был не по нашему блоку
+        && div.has(e.target).length === 0) { // и не по его дочерним элементам
+        div.fadeOut(); // скрываем его
+    }
 });
