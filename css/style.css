@@ -199,6 +199,13 @@ form .login-container .input-block .inner-block .input label {
     color: #11223E;
 }
 
+sub.color-red {
+    color: red;
+    font-size: 10px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
 form .login-container .input-block .inner-block .input input {
     background-color: transparent;
     border: none;

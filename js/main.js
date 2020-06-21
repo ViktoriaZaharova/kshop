@@ -16,28 +16,35 @@ $(document).ready(function () {
     autosize(document.querySelectorAll('textarea'));
 
     $('.btn-dropDown').click(function () {
-        $('.dropDown-menu').fadeOut();
-        $(this).toggleClass('click').siblings('.dropDown-menu').fadeToggle();
+        $('.dropDown-menu').hide();
+        $(this).toggleClass('click').siblings('.dropDown-menu').show();
     });
+
+    $(document).mouseup(function (e){ // событие клика по веб-документу
+        var div = $(".dropDown-menu"); // тут указываем ID элемента
+        var btn = $('.btn-dropDown');
+        if (!div.is(e.target) // если клик был не по нашему блоку
+            && btn.has(e.target).length === 0
+            && div.has(e.target).length === 0) { // и не по его дочерним элементам
+            div.fadeOut(); // скрываем его
+            btn.removeClass('click');
+        }
+    });
+
 
     $('.links-toggle').on('click', function (e) {
        e.preventDefault();
         var
             $this = $(this).parents('.history-category');
-            // content = $(this).parents('.history-category').find('.block_hidden');
 
 
         if($this.hasClass('open')){
             $this.removeClass('open');
             $(this).html('показать товары');
 
-            // content.fadeOut();
-
         } else {
             $this.addClass('open');
             $(this).html('свернуть раздел');
-
-            // content.fadeIn();
         }
     });
 
@@ -75,10 +82,3 @@ $('body').on('click', '.eye', function(e){
     return false;
 });
 
-$(document).mouseup(function (e){ // событие клика по веб-документу
-    var div = $(".dropDown-menu"); // тут указываем ID элемента
-    if (!div.is(e.target) // если клик был не по нашему блоку
-        && div.has(e.target).length === 0) { // и не по его дочерним элементам
-        div.fadeOut(); // скрываем его
-    }
-});
